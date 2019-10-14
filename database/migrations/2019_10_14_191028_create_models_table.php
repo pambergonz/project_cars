@@ -16,8 +16,9 @@ class CreateModelsTable extends Migration
         Schema::create('models', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('model');
-            $table->foreign('brand_id')->references('id')->on('brands');
+            $table->unsignedBigInteger('brand_id')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
