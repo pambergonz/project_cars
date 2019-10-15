@@ -28,7 +28,7 @@ class CarModelsController extends Controller
     public function create()
     {
         $brands= Brand::all();
-        return view('carModel.create');
+        return view('carModel.create',compact('brands'));
     }
 
     /**
@@ -41,11 +41,12 @@ class CarModelsController extends Controller
     {
         $request->validate([
           'model'=>'required | max:191',
-          //'brand_id'=>'required',
+          'brand_id'=>'required',
      ]);
 
      $carModel = new CarModel();
      $carModel->model = $request["model"];
+     $carModel->brand_id = $request["brand_id"];
      $carModel->save();
      return redirect('/models');
 
@@ -73,7 +74,8 @@ class CarModelsController extends Controller
     public function edit($id)
     {
         $carModel = CarModel::find($id);
-        return view('carModel.edit', compact('carModel'));
+        $brands = Brand::all();
+        return view('carModel.edit', compact('carModel','brands'));
     }
 
     /**
@@ -87,7 +89,7 @@ class CarModelsController extends Controller
     {
         $carModel = CarModel::find($id);
         $carModel->model = $request['model']!== null ? $request['model'] : $carModel['model'];
-        //$carModel->brand_id =;
+        $carModel->brand_id =$request['brand_id']!== null ? $request['brand_id'] : $carModel['brand_id'];
         $carModel->save();
         return redirect('/models');
     }

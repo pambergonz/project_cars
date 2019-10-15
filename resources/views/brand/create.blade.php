@@ -15,6 +15,7 @@
 @endif
 <form action="/brand/store" method="post" enctype="multipart/form-data">
 	@csrf
+	<div class="container">
 	<div class="row">
 		<div class="col-6">
 			<div class="form-group">
@@ -30,5 +31,7 @@
 		<div class="col-12">
 			 <button type="submit" class="btn btn-success">Submit</button>
 		</div>
+	</div>
+	</form>
 
 @endsection
