@@ -1,6 +1,6 @@
 # *_Cars App_*
 
-To use this app for first time you should follow the steps below:
+To use this app for the first time you should follow the steps below:
 
 - Clone the repository git clone
 ```
