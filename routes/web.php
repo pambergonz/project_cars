@@ -11,7 +11,6 @@
 |
 */
 
-Auth::routes();
 
 Route::get('/models','CarModelsController@index');
 Route::get('/model/create','CarModelsController@create')->middleware('auth','Admin');
@@ -28,6 +27,15 @@ Route::get('/brand/edit/{id}','BrandsController@edit')->middleware('auth','Admin
 Route::post('/brand/store','BrandsController@store');
 Route::put('/brand/update/{id}','BrandsController@update');
 Route::delete('/brand/destroy/{id}','BrandsController@destroy');
+
+
+Route::get('/users','UsersController@index')->middleware('auth','Admin');
+Route::get('/user/create','UsersController@create')->middleware('auth','Admin');
+Route::get('/user/show/{id}','UsersController@show')->middleware('auth','Admin');
+Route::get('/user/edit/{id}','UsersController@edit')->middleware('auth','Admin');
+Route::post('/user/store','UsersController@store')->middleware('auth','Admin');
+Route::put('/user/update/{id}','UsersController@update')->middleware('auth','Admin');
+Route::delete('/user/destroy/{id}','UsersController@destroy')->middleware('auth','Admin');
 
 Auth::routes();
 
