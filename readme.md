@@ -54,6 +54,6 @@ php artisan db:seed
 # *_App info_*
 
 - The models connects our app with the database.
-- All models have related routes with get, post, put and delete methods. T
+- All models have related routes with get, post, put and delete methods. 
 - The app contains two CRUDs related to models: Car Brands and Car Models.
 - Admin users can create, edit and delete Car Brands and Models. Operator users are able only to view them.
