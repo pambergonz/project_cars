@@ -58,6 +58,8 @@ class UsersController extends Controller
          $user->email = $request["email"];
          $user->password = Hash::make($request["password"]);
          $user->role = $request["role"];
+         $user->email_verified_at=now();
+
 
          $user->save();
             return redirect('/users');

@@ -68,7 +68,7 @@
 		<div class="col-6">
 			<div class="form-group">
 				<label>Password Confirm:</label>
-				<input type="password" name="password-confirm" value="{{ $errors->has("password-confirm") ? null : old("password-confirm") }}" class="form-control">
+				<input type="password" name="password_confirmation" value="{{ $errors->has("password-confirm") ? null : old("password-confirm") }}" class="form-control">
 				@error('password')
 					<span class="text-danger">
 						{{ $message }}
