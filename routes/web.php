@@ -28,3 +28,7 @@ Route::get('/brand/edit/{id}','BrandsController@edit');
 Route::post('/brand/store','BrandsController@store');
 Route::put('/brand/update/{id}','BrandsController@update');
 Route::delete('/brand/destroy/{id}','BrandsController@destroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
