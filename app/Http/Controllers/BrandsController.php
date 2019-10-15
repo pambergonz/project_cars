@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Brand;
+use App\CarModel;
+
 
 use Illuminate\Http\Request;
 
@@ -15,7 +17,8 @@ class BrandsController extends Controller
     public function index()
     {
         $brands = Brand::all();
-        return view('brand.index', compact('brands'));
+        $carModels = CarModel::all();
+        return view('brand.index', compact('brands', 'carModels'));
     }
 
     /**

@@ -4,11 +4,11 @@
 
 @section('mainContent')
 
-	<h1>Models</h1>
+	<h1>Car Models</h1>
 	<ul>
-		@foreach ($models as $model)
+		@foreach ($carModels as $carModel)
 			<li>
-				{{ $model->model }}
+				{{ $carModel->model }}
 			</li>
 		@endforeach
 	</ul>

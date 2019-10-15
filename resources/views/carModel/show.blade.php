@@ -4,6 +4,6 @@
 
 @section('mainContent')
 
-  <h1>{{$model->model}}</h1>
+  <h1>Car Model:{{$carModel->model}}</h1>
 
 @endsection

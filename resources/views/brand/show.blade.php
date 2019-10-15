@@ -4,6 +4,6 @@
 
 @section('mainContent')
 
-  <h1>{{$brand->brand}}</h1>
+  <h1>Brand:{{$brand->brand}}</h1>
 
 @endsection
