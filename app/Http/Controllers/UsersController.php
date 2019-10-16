@@ -58,7 +58,7 @@ class UsersController extends Controller
          $user->email = $request["email"];
          $user->password = Hash::make($request["password"]);
          $user->role = $request["role"];
-         $user->email_verified_at=now();
+         $user->email_verified_at= now();
 
 
          $user->save();
@@ -86,7 +86,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('user.edit', compact('user'));
     }
 
     /**
