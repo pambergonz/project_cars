@@ -13,8 +13,9 @@
 			@endforeach
 		</ul>
 	@endif
-	<form action="/user/store" method="post" enctype="multipart/form-data">
+	<form action="/user/update/{{$user->id}}" method="post" enctype="multipart/form-data">
 		@csrf
+		{{method_field('PUT')}}
 		<div class="container">
 			<div class="row">
 				<div class="col-6">

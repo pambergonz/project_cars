@@ -47,9 +47,6 @@ class UsersController extends Controller
          'email' => 'required | string | email | unique:users',
          'password' => 'required | string | confirmed',
          'role' => 'required',
-
-
-
      ]);
 
          $user = new User;
@@ -59,10 +56,8 @@ class UsersController extends Controller
          $user->password = Hash::make($request["password"]);
          $user->role = $request["role"];
          $user->email_verified_at= now();
-
-
          $user->save();
-            return redirect('/users');
+         return redirect('/users');
 
     }
 
@@ -99,7 +94,27 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        $request->validate([
+           'name' => 'string',
+           'username' => 'string',
+           'email' => 'string | email | unique:users',
+           'password' => 'string |min:8| confirmed',
+       ]);
+
+
+       //dd($user);
+
+
+           $user->name = $request['name']!== null ? $request['name'] : $user['name'];
+           $user->username = $request['username']!== null ? $request['username'] : $user['username'];
+           $user->email = $request['email']!== null ? $request['email'] : $user['email'];
+           $user->password = $request['password']!== null ? Hash::make($request["password"]) : $user['password'];
+           $user->role = $request["role"];
+           $user->email_verified_at= now();
+           $user->save();
+           return redirect('/users');
     }
 
     /**
@@ -110,6 +125,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect('/users');
     }
 }
