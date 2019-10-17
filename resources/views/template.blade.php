@@ -7,8 +7,10 @@
 		<link rel="stylesheet" href="/css/app.css">
 	</head>
 	<body>
-		<div class="container">
+		<div class="fluid-container">
 			@include('partials.navbar')
+		</div>
+		<div class="container">
 			@yield('mainContent')
 			@include('partials.footer')
 		</div>

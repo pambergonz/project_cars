@@ -1,6 +1,6 @@
 
-<nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">Cars App</a>
+<nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-primary w-100">
+      <a class="navbar-brand" href="#">Cars App</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -86,4 +86,5 @@
     @endguest
   </ul>
 </div>
+
 </nav>
