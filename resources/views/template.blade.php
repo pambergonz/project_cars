@@ -8,7 +8,9 @@
 	</head>
 	<body>
 		<div class="container">
+			@include('partials.navbar')
 			@yield('mainContent')
+			@include('partials.footer')
 		</div>
 	</body>
 </html>

@@ -8,7 +8,7 @@
 	<ul>
 		@foreach ($carModels as $carModel)
 			<li>
-				{{ $carModel->model }}
+				<a href="/model/show/{{$carModel->id}}">{{ $carModel->model }}</a>
 			</li>
 		@endforeach
 	</ul>

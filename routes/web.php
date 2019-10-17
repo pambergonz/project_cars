@@ -12,21 +12,21 @@
 */
 
 
-Route::get('/models','CarModelsController@index');
+Route::get('/models','CarModelsController@index')->middleware('auth');
 Route::get('/model/create','CarModelsController@create')->middleware('auth','Admin');
-Route::get('/model/show/{id}','CarModelsController@show');
+Route::get('/model/show/{id}','CarModelsController@show')->middleware('auth');
 Route::get('/model/edit/{id}','CarModelsController@edit')->middleware('auth','Admin');
-Route::post('/model/store','CarModelsController@store');
-Route::put('/model/update/{id}','CarModelsController@update');
-Route::delete('/model/destroy/{id}','CarModelsController@destroy');
+Route::post('/model/store','CarModelsController@store')->middleware('auth');
+Route::put('/model/update/{id}','CarModelsController@update')->middleware('auth');
+Route::delete('/model/destroy/{id}','CarModelsController@destroy')->middleware('auth');
 
-Route::get('/brands','BrandsController@index');
+Route::get('/brands','BrandsController@index')->middleware('auth');
 Route::get('/brand/create','BrandsController@create')->middleware('auth','Admin');
-Route::get('/brand/show/{id}','BrandsController@show');
+Route::get('/brand/show/{id}','BrandsController@show')->middleware('auth');
 Route::get('/brand/edit/{id}','BrandsController@edit')->middleware('auth','Admin');
-Route::post('/brand/store','BrandsController@store');
-Route::put('/brand/update/{id}','BrandsController@update');
-Route::delete('/brand/destroy/{id}','BrandsController@destroy');
+Route::post('/brand/store','BrandsController@store')->middleware('auth');
+Route::put('/brand/update/{id}','BrandsController@update')->middleware('auth');
+Route::delete('/brand/destroy/{id}','BrandsController@destroy')->middleware('auth');
 
 
 Route::get('/users','UsersController@index')->middleware('auth','Admin');
