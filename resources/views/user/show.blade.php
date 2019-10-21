@@ -14,6 +14,9 @@
     </div>
     <div class="card-footer">
       <h4>Privileges:{{$user->role}}</h4>
-    </div>
+      <div class="btn-group">
+        <a href="/user/edit/{{$user->id}}"class="btn btn-primary">Update</a>
+        <button type="button" class="btn btn-danger">Delete</button>
+      </div>
   </div>
 @endsection
