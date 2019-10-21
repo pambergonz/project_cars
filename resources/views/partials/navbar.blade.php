@@ -1,9 +1,11 @@
 
-<nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-primary w-100">
-      <a class="navbar-brand" href="#">Cars App</a>
+<!-- Left Side Of Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Cars App</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
 
@@ -35,26 +37,28 @@
         </div>
       </li>
 
-      <li class="nav-item dropdown">
-        @auth
-          @if (Auth::user()->isAdmin())
+      @auth
+        @if (Auth::user()->isAdmin())
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Users
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="/users">Index</a>
               <a class="dropdown-item" href="/user/create">Create</a>
-            @endif
-          @endauth
-        </div>
-      </li>
+            </div>
+          </li>
+
+        @endif
+      @endauth
     </ul>
   </div>
 
+  <!-- Right Side Of Navbar -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    <!-- Right Side Of Navbar -->
     <ul class="navbar-nav ml-auto">
+
       <!-- Authentication Links -->
       @guest
         <li class="nav-item">
@@ -84,7 +88,6 @@
         </div>
       </li>
     @endguest
-  </ul>
+    </ul>
 </div>
-
 </nav>
