@@ -76,11 +76,7 @@
 						@enderror
 					</div>
 				</div>
-
-
-
-
-
+				
 				<div class="col-8">
 					<div class="form-group">
 						<select name="role">

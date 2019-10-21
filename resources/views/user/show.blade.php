@@ -6,7 +6,6 @@
 
   <div class="card m-5 t-5 text-center">
     <div class="card-header">
-      <h4>Username:{{$user->username}}</h4>
       <div class="btn-group">
         <a href="/user/edit/{{$user->id}}"class="btn btn-primary">Update</a>
 
@@ -22,6 +21,7 @@
   </div>
     </div>
     <div class="card-body">
+      <h4>Username:{{$user->username}}</h4>
         <p>Name:{{$user->name}}</p>
         <p>Email:{{$user->email}}</p>
     </div>
