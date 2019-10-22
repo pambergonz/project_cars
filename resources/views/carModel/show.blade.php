@@ -4,8 +4,6 @@
 
 @section('mainContent')
 
-  @auth
-  @if(Auth::user()->isAdmin())
 
   <div class="card text-center mx-auto">
   <div class="card-header">
@@ -15,6 +13,8 @@
     <li class="list-group-item">
       <h4>Car brand: {{$carModel->brand->brand}}</h4>
     </li>
+    @auth
+      @if(Auth::user()->isAdmin())
     <li class="list-group-item">
     <div class="btn-group">
       <a href="/model/edit/{{$carModel->id}}"class="btn btn-primary">Update</a>

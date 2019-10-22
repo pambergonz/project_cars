@@ -99,7 +99,7 @@ class UsersController extends Controller
         $request->validate([
            'name' => 'string',
            'username' => 'string',
-           'email' => 'string | email | unique:users',
+           'email' => 'string | email',
            'password' => 'string |min:8| confirmed',
        ]);
 

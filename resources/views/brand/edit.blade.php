@@ -17,7 +17,7 @@
     @csrf
     {{ method_field('PUT') }}
     <div class="row">
-      <div class="col-12">
+      <div class="col-6">
         <div class="form-group">
           <label>Brand to update:</label>
           <input type="text" name="brand" value="{{$brand->brand}}" class="form-control">
@@ -28,19 +28,12 @@
           @enderror
         </div>
       </div>
-      <div class="col-4">
-        <button type="submit" class="btn btn-success btn-block">Update</button>
-      </div>
     </div>
-  </form>
-  <form class="" action='/brand/destroy/{{$brand->id}}' method="post">
-    @csrf
-    {{method_field('DELETE')}}
     <div class="row">
-      <div class="col-4">
-        <button type="delete" class="btn btn-danger btn-block">Delete</button>
+      <div class="col-6">
+        <button type="submit" class="btn btn-success">Update</button>
       </div>
     </div>
-  </form>
+</form>
 
 @endsection
