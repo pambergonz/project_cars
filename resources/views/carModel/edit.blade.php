@@ -4,7 +4,9 @@
 
 @section('mainContent')
 
+
   <h1>Update a car model</h1>
+
 
   @if (count($errors))
     <ul>
@@ -16,7 +18,6 @@
   <form action="/model/update/{{$carModel->id}}" method="post" enctype="multipart/form-data">
     @csrf
     {{ method_field('PUT') }}
-    <div class="container">
       <div class="row">
         <div class="col-6">
           <div class="form-group">
@@ -48,16 +49,10 @@
           </div>
         </div>
       </div>
-      <div class="col-4">
-        <button type="submit" class="btn btn-success btn-block">Update</button>
+      <div class="col-6">
+        <button type="submit" class="btn btn-success btn-lg">Update</button>
       </div>
     </form>
-    <form class="" action='/model/destroy/{{$carModel->id}}' method="post">
-      @csrf
-      {{method_field('DELETE')}}
-      <div class="col-4">
-        <button type="delete" class="btn btn-danger btn-block">Delete</button>
-      </div>
-    </form>
-  </div>
+
+
 @endsection
