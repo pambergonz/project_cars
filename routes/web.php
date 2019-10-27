@@ -37,6 +37,8 @@ Route::post('/user/store','UsersController@store')->middleware('auth','Admin');
 Route::put('/user/update/{id}','UsersController@update')->middleware('auth','Admin');
 Route::delete('/user/destroy/{id}','UsersController@destroy')->middleware('auth','Admin');
 
+Route::get('laravel-send-email', 'EmailController@sendEMail');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
