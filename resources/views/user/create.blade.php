@@ -76,7 +76,18 @@
 						@enderror
 					</div>
 				</div>
-				
+
+				<div class="col-6">
+					<div class="form-group">
+						<input type="file" name="avatar" value="" class="form-control">
+						@error('avatar')
+							<span class="text-danger">
+								{{ $message }}
+							</span>
+						@enderror
+					</div>
+				</div>
+
 				<div class="col-8">
 					<div class="form-group">
 						<select name="role">

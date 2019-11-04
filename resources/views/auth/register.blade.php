@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register')  }}" enctype="multipart/form-data" >
                         @csrf
 
                         <div class="form-group row">
@@ -73,6 +73,16 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="form-group">
+                            <input type="file" name="avatar" value="" class="form-control">
+                            @error('avatar')
+                              <span class="text-danger">
+                                {{ $message }}
+                              </span>
+                            @enderror
+                          </div>
                         </div>
 
                         <div class="form-group row mb-0">

@@ -1,3 +1,9 @@
+{{-- key adminError in session is created by Admin Middleware --}}
+@if (session('adminError'))
+	<div class="alert alert-danger">
+		{{ session('adminError') }}
+	</div>
+@endif
 
 <!-- Left Side Of Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">

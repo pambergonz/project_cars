@@ -66,12 +66,15 @@ class RegisterController extends Controller
     {
         $request = request();
         $userName = $request['username'];
+        $profilePicture = $request->file('avatar')->store('avatar');
 
         return User::create([
             'name' => $data['name'],
             'username'=>$userName,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'avatar'=>$profilePicture,
+
         ]);
     }
 }

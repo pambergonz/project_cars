@@ -47,6 +47,7 @@ class UsersController extends Controller
          'email' => 'required | string | email | unique:users',
          'password' => 'required | string | confirmed',
          'role' => 'required',
+         'avatar' => 'required',
      ]);
 
          $user = new User;
@@ -56,6 +57,9 @@ class UsersController extends Controller
          $user->password = Hash::make($request["password"]);
          $user->role = $request["role"];
          $user->email_verified_at= now();
+         $profilePicture = $request->file('avatar')->store('avatar');
+         $user->avatar = $profilePicture;
+
          $user->save();
          return redirect('/users');
 

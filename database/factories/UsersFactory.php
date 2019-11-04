@@ -12,6 +12,7 @@ $factory->define(User::class, function (Faker $faker) {
      'email'=>$faker->unique()->safeEmail,
      'email_verified_at'=>$faker->dateTime(),
      'password'=>$faker->password,
+     'avatar'=>$faker->imageUrl($width = 640, $height = 480),
      'role'=>$faker->randomElement([
        'Admin',
        'Operator']),

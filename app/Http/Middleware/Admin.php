@@ -15,6 +15,7 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
+        //adds adminError key in session and redirects back
       $user = \Auth::user();
        if ($user->role != "Admin") {
            return redirect()->back()->with('adminError', 'Admin privileges required');
