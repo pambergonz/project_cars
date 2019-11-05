@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -66,14 +67,18 @@ class RegisterController extends Controller
     {
         $request = request();
         $userName = $request['username'];
-        $profilePicture = $request->file('avatar')->store('avatar');
+        $profilePicture = $request->file('avatar');
+        $profilePictureName = uniqid(). "-profile." .$profilePicture->extension();
+        $folder = '/public/avatars';
+        $profilePicture->storePubliclyAs($folder, $profilePictureName);
+
 
         return User::create([
             'name' => $data['name'],
             'username'=>$userName,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'avatar'=>$profilePicture,
+            'avatar'=>$profilePictureName,
 
         ]);
     }
