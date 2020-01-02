@@ -1,0 +1,32 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- azure-pipelines-test
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: mkdir cars; cd cars ;git clone https://github.com/pambergonz/project_cars.git;cd project_cars; ls
+- task: DownloadGitHubRelease@0
+  inputs:
+    defaultVersionType: 'latest'
+    downloadPath: '$(System.ArtifactsDirectory)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '/path/to'
+
+- task: IISWebAppDeploymentOnMachineGroup@0
+  inputs:
+    WebSiteName: 'pagina'
+    VirtualApplication: 'www.caca.com'
+    Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
