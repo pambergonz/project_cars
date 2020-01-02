@@ -15,4 +15,18 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: mkdir cars; cd cars ;git clone https://github.com/pambergonz/project_cars.git;cd project_cars; ls
+- task: DownloadGitHubRelease@0
+  inputs:
+    defaultVersionType: 'latest'
+    downloadPath: '$(System.ArtifactsDirectory)'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '/path/to'
+
+- task: IISWebAppDeploymentOnMachineGroup@0
+  inputs:
+    WebSiteName: 'pagina'
+    VirtualApplication: 'www.caca.com'
+    Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
