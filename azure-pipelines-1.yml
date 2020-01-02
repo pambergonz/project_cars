@@ -13,5 +13,5 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: mkdir cars; cd cars ;git clone https://github.com/pambergonz/project_cars.git; ls
+- script: mkdir cars; cd cars ;git clone https://github.com/pambergonz/project_cars.git;cd project_cars; ls
 
