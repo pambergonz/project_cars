@@ -13,6 +13,5 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
-    ls
+- script: git clone https://github.com/pambergonz/project_cars.git
 
